@@ -1,0 +1,39 @@
+<div id="home">
+  <div id="user">
+    {{#if user}}
+      <h2>{{user}}</h2> 
+      Follows:{{#each follows}} {{this}}{{/each}}<br>
+      <button class="button button-sm" id="go-home">back</button>
+      {{#if canFollow}}<button class="button button-sm" user={{user}} id="follow-user">follow</button>{{/if}}
+    {{else}}
+      {{#if filteredView}}<button class="button button-sm" id="go-home">back</button>{{/if}}
+      {{#if currentUser}}
+      <div id="new-freet-box">
+        <form id="freet-form">
+          <input id="freet-input" class="input" type="text" maxlength="160">
+          <button id="freet-button" class="button search-row-button" type="submit">Freet!</button>
+          <button id="view-follows" class="button search-row-button">Filter Follows</button>
+        </form>
+      </div>
+    {{/if}}
+    <div id="freet-error" class="error">
+        {{#if notLoggedIn}}
+          Log in or register to view freets!
+        {{/if}}
+      </div>
+    </div>
+    {{/if}}
+    <div id="freet-container">
+      {{#each freets}}
+        <div id={{this._id}} class="freet-box">
+          {{#if this.ownership}}<button freet={{this._id}} class="delete-button no-border">X</button>
+          {{else}} {{#if this.isRefreet}} {{else}}<button freet={{this._id}} class="rf-button">RF</button>{{/if}}
+          {{/if}}
+          <b><a href="#" class="freet-user" user={{this.author}}>@{{this.author}} </a></b>
+          {{#if this.isRefreet}} refreeted {{this.originalAuthor}} {{/if}}
+          <em class="freet-time">({{this.ts}})</em> - <p class="freet-text">{{this.text}}</p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

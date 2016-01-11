@@ -1,0 +1,24 @@
+{
+  "name": "kimberli-fritter",
+  "version": "1.0.0",
+  "description": "fritter for 6.170",
+  "private": true,
+  "main": "bin/www",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-session": "*",
+    "handlebars": "^4.0.2",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.11",
+    "morgan": "~1.2.3",
+    "node-uuid": "^1.4.3"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  }
+}

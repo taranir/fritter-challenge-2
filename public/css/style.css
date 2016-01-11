@@ -1,0 +1,166 @@
+/* Structure */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif; }
+
+a,
+a:visited {
+  color: #490A3D;
+  text-decoration: none; }
+
+a:hover {
+  color: #BD1550; }
+
+#container {
+  background-color: #BD1550; }
+
+#home {
+  position: relative;
+  top: -8px;
+  width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px 60px;
+  border: 8px double #BD1550;
+  min-height: calc(100vh - 250px); }
+
+/* Header */
+#header {
+  position: relative;
+  text-align: center;
+  height: 200px;
+  background-color: #490A3D;
+  border-bottom: 1px solid black;
+  box-shadow: 0 4px 12px black;
+  z-index: 50; }
+
+#title {
+  font-style: italic;
+  font-family: "Lobster Two", sans-serif;
+  font-size: 400%;
+  margin: 0;
+  padding-top: 40px;
+  color: #F8CA00; }
+
+#user-info {
+  display: inline-block;
+  color: #F8CA00; }
+
+.header-button {
+  display: inline-block; }
+
+#logout-button {
+  text-decoration: none;
+  font-style: italic;
+  font-size: 125%;
+  color: #F8CA00; }
+
+/* Login popup*/
+#popup {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  text-align: center;
+  top: 20%;
+  left: 0;
+  right: 0;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #555;
+  border-radius: 12px;
+  box-shadow: 0 0 20px black;
+  display: none;
+  z-index: 99; }
+
+#cover {
+  position: absolute;
+  top: 0;
+  background-color: black;
+  min-height: 100vmax;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  display: none;
+  z-index: 80; }
+
+.form-ele {
+  display: block;
+  margin: 10px auto; }
+
+#close-popup {
+  float: right; }
+
+/* Freet form */
+#new-freet-box {
+  margin: 15px 0;
+  text-align: center; }
+
+#freet-input {
+  border: 1px solid #BD1550; }
+
+.search-row-button {
+  position: relative;
+  top: -2px; }
+
+/* Freets */
+.freet-box {
+  padding: 10px;
+  margin: 4px; }
+
+.freet-box {
+  border: 1px solid #490A3D;
+  overflow-x: scroll; }
+
+.freet-time {
+  font-size: 75%; }
+
+.freet-user {
+  cursor: pointer; }
+
+.freet-user,
+.freet-text {
+  display: inline-block; }
+
+.delete-button,
+.rf-button {
+  float: right; }
+
+/* Forms */
+.no-border {
+  cursor: pointer;
+  border: none;
+  background-color: transparent; }
+
+.error {
+  color: #E97F02;
+  text-align: center; }
+
+.input {
+  font-size: 150%;
+  font-family: "Lato", sans-serif; }
+
+.button {
+  border: none;
+  height: 33px;
+  margin: 20px auto;
+  padding: 0 20px;
+  background-color: #BD1550;
+  font-family: "Lato", sans-serif;
+  font-size: 125%;
+  color: white; }
+
+.button:hover {
+  background-color: #8f103d; }
+
+.button-sm {
+  height: 25px;
+  font-size: 100%; }
+
+.button-light {
+  background-color: transparent;
+  border: 2px solid #F8CA00;
+  color: #F8CA00; }
