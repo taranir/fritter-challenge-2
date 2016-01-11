@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Fritter by Kimberli</title>
-    <script src="/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="/js/vendor/handlebars.runtime.min.js"></script>
-    <script src="/js/vendor/uuid.js"></script>
-    <script src="/js/vendor/moment.js"></script>
-    <script src="/js/templates.js"></script>
-    <script src="/js/index.js"></script>
-    <script src="/js/auth.js"></script>
-    <script src="/js/users.js"></script>
-    <script src="/js/freet.js"></script>
-    <script src="/js/helpers.js"></script>
-    <link href="/css/style.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    <div id="page">
-        <div id="header"></div>
-        <div id="popup"></div>
-        <div id="cover"></div>
-        <div id="container"></div>
-    </div>
-</body>
+  <head>
+    <title><%= title %></title>
+    <% include imports %>
+    <link rel='stylesheet' href='/stylesheets/home.css'>
+    <script src="/javascripts/home.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <% include navlinks %>
+      
+      <div id="content">
+        <div id="header">
+          <h1><%= title %></h1>
+          <% if (profile) { %>
+            <% if (followed) { %>
+              <a href="/users/unfollow/<%= username %>"><button class="fritter-unfollow-button btn btn-warning">Unfollow</button></a>
+            <% } else { %>
+              <a href="/users/follow/<%= username %>"><button class="fritter-follow-button btn btn-primary">Follow</button></a>
+            <% } %>
+          <% } else if (!feed) { %>
+            hi <%= username %>
+        <div id="new-fritter-container">
+          <form role="form" action="/posts/new" method="POST">
+            <textarea name="text" id="new-fritter-form" class="form-control" rows="3" maxlength="140" placeholder="How are you frittering today?"></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+          <% } %>
+        </div>
+
+        <div id="fritter-container">
+          <% for(var i = 0; i < posts.length; i++) { %>
+
+            <div class="fritter" data-post-id=<%= posts[i]._id %> >
+              <span class="fritter-username"><a href="/profile/<%= posts[i].username %>"><h3><%= posts[i].username %></h3></a></span>
+              <span class="fritter-text"><%= posts[i].text %></span>
+
+              <span class="fritter-edit">
+                <textarea class="fritter-edit-textarea" class="form-control" rows="3" maxlength="140"></textarea>
+                <button type="submit" class="btn btn-primary fritter-edit-submit">Submit</button>
+              </span>
+
+              <% if (posts[i].username == username && !profile) { %>
+                <span class="fritter-icon fritter-delete-btn"><i class="fa fa-trash"></i></span>
+                <span class="fritter-icon fritter-edit-btn"><i class="fa fa-pencil-square-o"></i></span>
+              <% } else { %>
+                <% if (favs.indexOf(posts[i]._id) > -1) { %>
+                  <span class="fritter-icon fritter-unfav-btn">
+                    <i class="fa fa-star"></i>
+                  </span>
+                  <span class="fritter-icon fritter-fav-btn" style="display: none">
+                    <i class="fa fa-star-o"></i>
+                  </span>
+                <% } else { %>
+                  <span class="fritter-icon fritter-unfav-btn" style="display:none">
+                    <i class="fa fa-star"></i>
+                  </span>
+                  <span class="fritter-icon fritter-fav-btn">
+                    <i class="fa fa-star-o"></i>
+                  </span>
+                <% } %>
+              <% } %>
+              <hr></hr>
+            </div>
+            
+          <% } %>
+
+        </div>
+
+      </div> <!-- content -->
+      <div id="push"></div>
+    </div> <!--wrap -->
+    
+    <% include footer %>
+  </body>
 </html>

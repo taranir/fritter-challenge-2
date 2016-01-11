@@ -1,0 +1,99 @@
+
+html, body {
+  font-family: "Oxygen", sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+
+h1 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  color: #f56560;
+}
+
+/* usernames in fritters */
+h3 { 
+  display: inline-block;
+  margin: 0;
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -100px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 100px;
+}
+#footer {
+  background-color: #DBDBDB;
+  padding-top: 20px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+#fritter-container {
+  padding: 20px;
+}
+
+.fritter {
+  position: relative;
+  padding: 20px 30px;
+}
+
+.fritter-username {
+  margin-right: 10px;
+}
+
+.fritter-delete-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+}
+
+.fritter-edit-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  bottom: 50px;
+}
+
+.fritter-fav-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+}
+
+.fritter-content {
+  width: 70%;
+  display: inline-block;
+}
+
+.fritter-edit {
+  display: none;
+}
+
+.fritter-edit-submit {
+  float: right;
+}
+
+.fritter-edit-textarea {
+  width: 70%;
+}

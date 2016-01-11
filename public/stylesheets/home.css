@@ -1,0 +1,88 @@
+#content {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 20px;
+  width: 800px;
+}
+
+#navlinks {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#navlinks div {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#navlinks div:hover {
+  color: #cddcba;
+}
+
+#header {
+  padding: 10px;
+}
+
+#new-fritter-container {
+  padding: 10px;
+  margin-bottom: 80px;
+}
+
+#new-fritter-container button {
+  margin: 10px;
+  float: right;
+}
+
+
+#fritter-container {
+  padding: 20px;
+}
+
+.fritter {
+  position: relative;
+  padding: 20px 30px;
+}
+
+.fritter-username {
+  margin-right: 10px;
+}
+
+.fritter-icon {
+  cursor: pointer;
+  position: absolute;
+  bottom: 65px;
+  width: 20px;
+  height: 20px;
+}
+
+.fritter-delete-btn {
+  right: 20px;
+}
+
+.fritter-edit-btn {
+  right: 40px;
+}
+
+.fritter-fav-btn, .fritter-unfav-btn {
+  color: #FFD738;
+  left: 0px;
+}
+
+.fritter-content {
+  width: 70%;
+  display: inline-block;
+}
+
+.fritter-edit {
+  display: none;
+}
+
+.fritter-edit-submit {
+  float: right;
+}
+
+.fritter-edit-textarea {
+  width: 70%;
+}
